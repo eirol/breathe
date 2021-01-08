@@ -12,8 +12,7 @@
   const hour = minute * 60;
   const day = hour * 24;
 
-  //let target = "Jan 9, 2021 19:00:00";
-  let target = "Jan 8, 2021 12:00:00";
+  let target = "Jan 9, 2021 19:00:00";
   let countDown = new Date(target).getTime();
 
   let offset = 0;
