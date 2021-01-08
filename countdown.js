@@ -12,7 +12,8 @@
   const hour = minute * 60;
   const day = hour * 24;
 
-  let target = "Jan 9, 2021 19:00:00";
+  //let target = "Jan 9, 2021 19:00:00";
+  let target = "Jan 8, 2021 12:00:00";
   let countDown = new Date(target).getTime();
 
   let offset = 0;
@@ -46,8 +47,16 @@
       return y;
     }
 
+    let speedFactor = 1;
+    let speedUpDistance = 2*3600*1000;
+    if (distance < 0) {
+      speedFactor = 0;
+    } else if (distance < speedUpDistance) {
+      speedFactor = 15 - 14*Math.max(distance, 0)/speedUpDistance;
+    }
+
     let breathPeriod = 14.0;
-    theta += (now - lastT)/1000;
+    theta += (now - lastT)/1000 * speedFactor;
     if (theta > breathPeriod) {
       theta -= breathPeriod;
     }
@@ -56,6 +65,10 @@
     document.getElementById("in").style.opacity = breatheAnimation(theta, 0, 2, 6.5, 7.5);
     document.getElementById("countdown-container").style.opacity = breatheAnimation(theta, 1, 2.5, 6, 7);
     document.getElementById("out").style.opacity = breatheAnimation(theta, 7.4, 9.0, 12.0, 14.0);
+
+    if (distance < 0) {
+      document.getElementById("countdown-container").style.opacity = 1;
+    }
 
     if (distance < 0) distance = 0;
 
