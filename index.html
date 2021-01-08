@@ -1,0 +1,36 @@
+<!-- I have to say this: web programming sucks (and, granted, I also suck at it) -->
+
+<!-- Code taken from https://codepen.io/AllThingsSmitty/pen/JJavZN -->
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuenta atrás supersorpresa</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'> 
+  <link rel="stylesheet" type="text/css" href="countdown.css">
+  <script src="countdown.js"></script>
+</head>
+<body>
+<div class="container" id="container">
+  <div id="breath">
+    <h1 id="in" style="color:#6eebff">INSPIRA</h1>
+    <h1 id="out" style="color:#ff6767">EXPIRA</h1>
+  </div>
+  <div id="countdown-container">
+    <h1 id="left">Faltan</h1>
+    <div id="countdown">
+      <ul>
+        <li id="lidays"><span class="remaining" id="days"></span><span id="daylabel">Días</span></li>
+        <li id="lihours"><span class="remaining" id="hours"></span><span id="hourlabel">Horas</span></li>
+        <li id="liminutes"><span class="remaining" id="minutes"></span><span id="minutelabel">Minutos</span></li>
+        <li id="liseconds"><span class="remaining" id="seconds"></span><span id="secondlabel">Segundos</span></li>
+      </ul>
+    </div>
+    <h1>para el <span class="creepy-script">estreno</span></h1>
+  </div>
+</div>
+</body>
+</head>
+</html>

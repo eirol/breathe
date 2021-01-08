@@ -1,0 +1,197 @@
+/* general styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  align-items: center;
+  background-image: url("background.png");
+  background-position: 81% 59%;
+  background-size: 192%;
+  background-color: #333;
+  display: flex;
+  background-blend-mode: overlay;
+  font-family: sans-serif;
+  /*
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+  */
+}
+
+.container {
+  color: #ddd;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+  font-size: 2.0rem;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li .remaining {
+  display: block;
+  font-size: 4.5rem;
+}
+
+.message {
+  font-size: 4rem;
+}
+
+#content {
+  display: none;
+  padding: 1rem;
+}
+
+#countdown {
+  margin-top: 4vh;
+  margin-bottom: 7vh;
+}
+
+#lidays {
+  min-width: 6.8rem;
+}
+
+#lihours {
+  min-width: 9.5rem;
+}
+
+#liminutes {
+  min-width: 10rem;
+}
+
+#liseconds {
+  min-width: 12rem;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  li {
+    font-size: 1.125rem;
+    padding: .75rem;
+  }
+
+  li .remaining {
+    font-size: 3.375rem;
+  }
+
+  #lidays {
+    min-width: 5.1rem;
+  }
+
+  #lihours {
+    min-width: 6.375rem;
+  }
+
+  #liminutes {
+    min-width: 7.5rem;
+  }
+
+  #liseconds {
+    min-width: 9rem;
+  }
+}
+
+@media all and (max-width: 430px) {
+  h1 {
+    font-size: 2.0rem;
+  }
+
+  li {
+    font-size: 0.900rem;
+    padding: 0.45rem;
+  }
+
+  li .remaining {
+    font-size: 3.375rem;
+  }
+
+  #countdown {
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+  }
+
+  #lidays {
+    min-width: 3.6rem;
+  }
+
+  #lihours {
+    min-width: 4.67rem;
+  }
+
+  #liminutes {
+    min-width: 5.67rem;
+  }
+
+  #liseconds {
+    min-width: 6.1rem;
+  }
+}
+
+@media all and (max-width: 330px) {
+  /* For the iPhone 5/SE */
+
+  h1 {
+    font-size: 2.0rem;
+  }
+
+  li {
+    font-size: 0.900rem;
+    padding: 0.45rem;
+  }
+
+  li .remaining {
+    font-size: 3.375rem;
+  }
+
+  #countdown {
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+  }
+
+  #lidays {
+    min-width: 0.6rem;
+  }
+
+  #lihours {
+    min-width: 4.67rem;
+  }
+
+  #liminutes {
+    min-width: 5.27rem;
+  }
+
+  #liseconds {
+    min-width: 6.1rem;
+  }
+}
+
+.creepy-script {
+}
