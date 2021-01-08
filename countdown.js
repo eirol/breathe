@@ -21,6 +21,8 @@
   let lastT = t0
   let theta = 0;
 
+  let dt = 30;
+
   function update() {
     let now = new Date().getTime();
     let distance = countDown - now;
@@ -55,7 +57,7 @@
     }
 
     let breathPeriod = 14.0;
-    theta += (now - lastT)/1000 * speedFactor;
+    theta += dt/1000 * speedFactor;
     if (theta > breathPeriod) {
       theta -= breathPeriod;
     }
@@ -89,7 +91,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", update);
-  setInterval(update, 30);
+  setInterval(update, dt);
 
   var music = document.getElementById('audioplayer');
   function playAudio() {
