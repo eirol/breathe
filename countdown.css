@@ -8,16 +8,23 @@
 html, body {
   height: 100%;
   margin: 0;
+
 }
 
 body {
-  align-items: center;
-  background-image: url("background.png");
-  background-position: 81% 59%;
-  background-size: 192%;
-  background-color: #333;
-  display: flex;
+  /*
+   background: url("background.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-blend-mode: overlay;
+  background-color: #333;
+  */
+  background-color: #231f20;
+
+  display: flex;
+  align-items: center;
   font-family: sans-serif;
   /*
   font-family: -apple-system,

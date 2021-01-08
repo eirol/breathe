@@ -3,6 +3,10 @@
     element.innerText = (value == 1) ? singular : plural;
   }
 
+  function easeInOut(x) {
+    return -(Math.cos(Math.PI * x) - 1) / 2;
+  }
+
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
@@ -21,16 +25,37 @@
     let now = new Date().getTime();
     let distance = countDown - now;
 
-    theta += 2*Math.PI * (now - lastT)/1000 * 1/7;
-    if (theta > 2*Math.PI) {
-      theta -= 2*Math.PI;
+    function breatheAnimation(x, x0, x1, x2, x3) {
+      // Sorry, no comments. I'm in a hurry.
+
+      let y = 0;
+
+      if (x < x0) {
+        y = 0;
+      } else if (x < x1) {
+        // Ease in
+        y = easeInOut((x - x0)/(x1 - x0));
+      } else if (x < x2) {
+        // Sustain
+        y = 1;
+      } else if (x < x3) {
+        // Ease out
+        y = 1 - easeInOut((x - x2)/(x3 - x2));
+      }
+
+      return y;
+    }
+
+    let breathPeriod = 14.0;
+    theta += (now - lastT)/1000;
+    if (theta > breathPeriod) {
+      theta -= breathPeriod;
     }
     lastT = now;
 
-    let opacity = 3 * Math.sin(theta);
-    document.getElementById("in").style.opacity = opacity;
-    document.getElementById("out").style.opacity = -opacity;
-    document.getElementById("countdown-container").style.opacity = opacity/3;
+    document.getElementById("in").style.opacity = breatheAnimation(theta, 0, 2, 6.5, 7.5);
+    document.getElementById("countdown-container").style.opacity = breatheAnimation(theta, 1, 2.5, 6, 7);
+    document.getElementById("out").style.opacity = breatheAnimation(theta, 7.4, 9.0, 12.0, 14.0);
 
     if (distance < 0) distance = 0;
 
